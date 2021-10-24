@@ -1,0 +1,23 @@
+@(count: Int)
+@layouts.html.default() {
+<p>You have @count journal log entries !!</p>
+<hr>
+<div>
+  <form action="/web/pages/addRecord" , method="POST">
+    <table>
+      <tr>
+        <td><input type="text"></td>
+        <td><button type="submit">Add</button> </td>
+      </tr>
+    </table>
+  </form>
+  <form action="/web/pages/search" , method="POST">
+    <table>
+      <tr>
+        <td><input id="searchString" type="text"></td>
+        <td><button type="submit">Search</button> </td>
+      </tr>
+    </table>
+  </form>  
+</div>
+}
