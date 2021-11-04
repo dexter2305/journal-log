@@ -13,6 +13,8 @@ trait RecordService {
 
   def findByContains(searchString: String): Option[Seq[Record]]
 
+  def findLast5Records(): Seq[Record]
+
   def size(): Int
 }
 
@@ -40,4 +42,6 @@ class InMemoryRecordServiceImpl() extends RecordService {
       r
     }.toList)
   }
+
+  override def findLast5Records(): Seq[Record] = store.values.toList.sortBy(_.t).take(5)
 }

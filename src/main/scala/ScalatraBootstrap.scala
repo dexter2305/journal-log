@@ -14,7 +14,7 @@ class ScalatraBootstrap extends LifeCycle {
 
 
     context.mount(new PingServlet(recordService), "/api/ping/*")
-    context.mount(new PagesController(recordService), "/web/pages/*")
+    context.mount(new PagesController(recordService), "/web/*")
     context.mount(new IndexPageController, "/*")
   }
 }

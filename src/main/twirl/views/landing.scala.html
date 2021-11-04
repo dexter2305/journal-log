@@ -1,23 +1,30 @@
-@(count: Int)
+@import io.l8.jlog.domain.Record
+@(count: Int, recent5: Seq[Record])
 @layouts.html.default() {
-<p>You have @count journal log entries !!</p>
-<hr>
-<div>
-  <form action="/web/pages/addRecord" , method="POST">
-    <table>
-      <tr>
-        <td><input type="text"></td>
-        <td><button type="submit">Add</button> </td>
-      </tr>
-    </table>
-  </form>
-  <form action="/web/pages/search" , method="POST">
-    <table>
-      <tr>
-        <td><input id="searchString" type="text"></td>
-        <td><button type="submit">Search</button> </td>
-      </tr>
-    </table>
-  </form>  
-</div>
+
+<section>
+  <p>You have @count journal log entries !!</p>
+</section>
+
+<section>
+  <article>
+    <form  >
+      <input type="text" placeholder="Log something?">
+      <input type="submit" value="Log"></input>
+    </form>
+  </article>
+</section>
+
+
+
+<section>
+  <h2>Recent 5 log entries</h2>
+  <article>
+    <ul>
+      @for(record <- recent5) { <li>@record.t | @record.log</li>
+        }
+    </ul>
+  </article>
+</section>
+
 }

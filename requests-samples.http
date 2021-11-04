@@ -1,0 +1,12 @@
+@ep=http://localhost:8080
+
+
+GET {{ep}}/api/ping/
+###
+
+POST {{ep}}/web/pages/addRecord
+Content-Type: "application/x-www-form-urlencoded"
+
+{
+  "text": "time now is ${{$datetime iso8601}}"
+}
