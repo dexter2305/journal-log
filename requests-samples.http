@@ -1,12 +1,12 @@
 @ep=http://localhost:8080
+@host=localhost:8080
 
-
-GET {{ep}}/api/ping/
+GET /api/ping/
+Host: {{host}}
 ###
 
-POST {{ep}}/web/pages/addRecord
-Content-Type: "application/x-www-form-urlencoded"
+POST /web/addRecord.route
+Host: {{host}}
+Content-Type: application/x-www-form-urlencoded
 
-{
-  "text": "time now is ${{$datetime iso8601}}"
-}
+text=submitting from from rest client does not require quotes

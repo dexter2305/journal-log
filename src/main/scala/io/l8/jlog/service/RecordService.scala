@@ -27,7 +27,8 @@ class InMemoryRecordServiceImpl() extends RecordService {
   }
 
   override def add(newRecord: Record): Int = {
-    store += (store.size -> newRecord.copy(id = store.size))
+    if (newRecord.log.isEmpty()) store.size
+    else store += (store.size -> newRecord.copy(id = store.size))
     store.size
   }
 
@@ -43,5 +44,5 @@ class InMemoryRecordServiceImpl() extends RecordService {
     }.toList)
   }
 
-  override def findLast5Records(): Seq[Record] = store.values.toList.sortBy(_.t).take(5)
+  override def findLast5Records(): Seq[Record] = store.values.toList.sortBy(_.t).reverse.take(5)
 }

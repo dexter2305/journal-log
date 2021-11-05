@@ -2,29 +2,47 @@
 @(count: Int, recent5: Seq[Record])
 @layouts.html.default() {
 
+@if(count > 0) {
 <section>
   <p>You have @count journal log entries !!</p>
 </section>
+} else {
+<section>
+  <p>Start logging.</p>
+</section>
+}
 
 <section>
   <article>
-    <form  >
-      <input type="text" placeholder="Log something?">
-      <input type="submit" value="Log"></input>
+    <form class="pure-form" action="/web/addRecord.route" method="post">
+      <fieldset>
+        <input type="text" name="text" placeholder="Log something?">
+        <button type="submit" class="pure-button pure-button-primary">Log</button>
+      </fieldset>
     </form>
   </article>
 </section>
 
 
-
+@if(count > 0){
 <section>
   <h2>Recent 5 log entries</h2>
   <article>
-    <ul>
-      @for(record <- recent5) { <li>@record.t | @record.log</li>
-        }
-    </ul>
+    <table class="pure-table pure-table-horizontal">
+      <thead>
+        <td>At</td>
+        <td>Log</td>
+      </thead>
+      <tbody>
+        @for(record <- recent5) { <tr>
+          <td>@record.t </td>
+          <td>@record.log</td>
+          </tr>
+          }
+      </tbody>
+    </table>
   </article>
 </section>
+}
 
 }
