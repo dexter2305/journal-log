@@ -23,15 +23,14 @@
   </article>
 </section>
 
-
 @if(count > 0){
 <section>
   <h2>Recent 5 log entries</h2>
   <article>
     <table class="pure-table pure-table-horizontal">
       <thead>
-        <td>At</td>
-        <td>Log</td>
+        <td>When </td>
+        <td>Logged</td>
       </thead>
       <tbody>
         @for(record <- recent5) { <tr>
