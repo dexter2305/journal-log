@@ -1,0 +1,36 @@
+@layouts.html.default(){
+
+<section class="section">
+
+  <div class="container">
+    <form method="post" action="/web/login.route">
+      
+      <div class="field">
+        <label class="subtitle is-3">Sign In</label>
+      </div>
+      
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input type="email" name="email" class="email">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input type="password" name="password" class="password">
+        </div>
+      </div>
+      
+      <div class="field">
+        <div class="control">
+          <button type="submit" class="button is-primary">Let me in</button>
+        </div>
+      </div>
+    
+    </form>
+  </div>
+</section>
+
+}

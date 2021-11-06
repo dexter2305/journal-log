@@ -4,12 +4,14 @@ import org.scalatra.ScalatraServlet
 
 class IndexPageController extends ScalatraServlet {
 
+  def indexPage() = views.html.index()
+
   get("/") {
-    redirect(Routes.LANDING_ROUTE)
+    indexPage()
   }
 
   get("""/index\.[html|htm]""".r) {
-    redirect(Routes.LANDING_ROUTE)
+    indexPage()
   }
 
 }
