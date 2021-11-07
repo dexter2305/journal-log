@@ -9,6 +9,6 @@ object Main {
   def main(args: Array[String]) = {
 
     val live = new JournalLoggerApp with JettyHttpServiceComponent with PureConfigComponent
-
+    live.run()
   }
 }
