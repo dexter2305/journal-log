@@ -2,7 +2,7 @@ package io.l8.jlog.config
 
 import pureconfig.ConfigSource
 
-trait AppConfigServiceComponent {
+trait AppConfigComponent {
   val appConfigService: AppConfigService
 
   trait AppConfigService {

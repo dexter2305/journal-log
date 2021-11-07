@@ -1,13 +1,13 @@
 package io.l8.jlog.server
 
-import io.l8.jlog.config.AppConfigServiceComponent
+import io.l8.jlog.config.AppConfigComponent
 import org.eclipse.jetty.webapp.WebAppContext
 import org.scalatra.servlet.ScalatraListener
 import org.eclipse.jetty.server.Server
 import io.l8.jlog.config.Port
 
 trait JettyHttpServiceComponent extends HttpServiceComponent {
-  self: AppConfigServiceComponent =>
+  self: AppConfigComponent =>
 
   override val httpService: HttpService = new JettyHttpService
   

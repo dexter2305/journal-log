@@ -1,10 +1,10 @@
 package io.l8.jlog.app
 
 import io.l8.jlog.server.HttpServiceComponent
-import io.l8.jlog.config.AppConfigServiceComponent
+import io.l8.jlog.config.AppConfigComponent
 
 class JournalLoggerApp {
-  self: HttpServiceComponent with AppConfigServiceComponent =>
+  self: HttpServiceComponent with AppConfigComponent =>
 
   def run(): Unit = httpService.start()
 }

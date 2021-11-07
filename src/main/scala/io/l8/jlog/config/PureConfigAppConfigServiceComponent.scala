@@ -1,6 +1,6 @@
 package io.l8.jlog.config
 
-trait PureConfigAppConfigServiceComponent extends AppConfigServiceComponent {
+trait PureConfigComponent extends AppConfigComponent {
   import pureconfig.ConfigSource
   import pureconfig.generic.auto.exportReader
 
